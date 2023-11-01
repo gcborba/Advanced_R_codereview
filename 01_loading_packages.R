@@ -2,7 +2,7 @@
 
 rm(list=ls())
 
-
+library(readr)#read csv file
 library(tidyverse)
 library(dplyr)
 library(paran) #implementation of Horn's technique for numerically and graphically evaluating the components or factors retained in a principle components

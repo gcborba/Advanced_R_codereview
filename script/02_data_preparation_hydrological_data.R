@@ -5,9 +5,9 @@
 
 #setup
 
-hydro<-read_csv("Advanced_R_codereview/data/hydrological_indices_completed.csv")%>%
+hydro<-read_csv("data/hydrological_indices_completed.csv")%>%
   filter(Year %in% c(1991:2011))%>% #selecting the correspond timescale with fishing data 
-  select(Year, 'Area','River','January','February','March','April', #selecting hydrological indices based on literature review
+  dplyr::select(Year, 'Area','River','January','February','March','April', #selecting hydrological indices based on literature review
          'May','June','July','August','September','October','November','December',
          'day30_min', 'day90_min','day30_max','day90_max','Max_level_days','High_flows',
          'Min_level_days','Very_highflows','Low_flows','Very_lowflows',
@@ -21,7 +21,7 @@ data_norm <- scale(na.omit(hydro[,-c(1,2,3)]),scale = T);head(data_norm)
 corr <- cor(na.omit(data_norm));
 ggcorrplot(corr)
 
-#cluster analysis --------
+
 dist = dist(corr)
 
 #visualing the dendrogram 
@@ -32,10 +32,12 @@ plot(hclust)
 paran(corr, iterations=5000, centile = 95)
 fviz_nbclust(corr, kmeans, method = "wss")  
 
+#cluster analysis --------
 k2 <- kmeans(corr, centers = 2, nstart = 25)#using 2 clusters 
+#based on the means the day90_max, day90_min and Min_level_days, Max_level_days were selected.
 
 #plotting clusters 
-fviz_cluster(k2, data = corr, geom = "point")+
+fviz_cluster(k2, data = corr, geom = "text")
 
 #creating a new file including lag of 1,2 and 3 yrs. This is related to the time that fish takes to respond to
 #fluctuations in river water level

@@ -13,8 +13,10 @@ Main goal: select the most important hydrological indices to the fish catch
 
 See below the description of each variables in each column:
 
-Year: 1993 to 2011 (same years of fishing information)
+Year: 1991 to 2011 (same years of fishing information)
+
 ANA_station: municipality of Manacapuru and Obidos where the Brazilian Agency of Water (ANA) has historical records of daily water level.
+
 Area: municipality of Manaus and Santarem where fishing take place and where is located the fish market. 
 
 River:lower_amz = Lower Amazon region of the Amazon River
@@ -24,13 +26,13 @@ Max_level_days: the number of continuous days on the maximum water level in a ye
 
 Min_level_days:  the number of continuous days on the minimum water level in a year 
 
-High_flows: 	
+High_flows: the water level during the high water period 
 
-Very_highflows: above the historical average 
+Very_highflows: above the historical average of high water period 
 
-Low_flows:
+Low_flows: the water level during the low water period 
 
-Very_lowflows:
+Very_lowflows: above the historical average of low water period 
 
 Maximum_level: annual maximum water level 
 
@@ -72,8 +74,8 @@ Date_min: date of the lowest river water level in the year
 
 Date_max: date of the highest river water level in the year
 
-Rise_rate: rate taking account the 
+Rise_rate: rate taking account the duration of rise and water level during rising period
 
-Fall_rate:	
+Fall_rate:	rate taking account the duration of fall and water level during receding period
 
-Reversals: number of times that water level fluctuations are identified in a year 
+Reversals: number of times that abnormal water level fluctuations are identified in a year 
