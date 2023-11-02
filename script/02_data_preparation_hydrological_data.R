@@ -21,7 +21,7 @@ data_norm <- scale(na.omit(hydro[,-c(1,2,3)]),scale = T);head(data_norm)
 corr <- cor(na.omit(data_norm));
 ggcorrplot(corr)
 
-
+#calculate matrix of distance between my hydrological indices based on correlation values
 dist = dist(corr)
 
 #visualing the dendrogram 
